@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +24,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .logo h1 {
@@ -69,7 +70,7 @@
             background: white;
             padding: 2rem;
             border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         .contact-info {
@@ -157,8 +158,13 @@
             color: white;
         }
 
-        .btn-whatsapp { background: #25D366; }
-        .btn-instagram { background: linear-gradient(45deg, #f09433, #d62976, #962fbf); }
+        .btn-whatsapp {
+            background: #25D366;
+        }
+
+        .btn-instagram {
+            background: linear-gradient(45deg, #f09433, #d62976, #962fbf);
+        }
 
         .whatsapp-float {
             position: fixed;
@@ -174,7 +180,7 @@
             justify-content: center;
             font-size: 30px;
             text-decoration: none;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             z-index: 1000;
         }
 
@@ -200,12 +206,23 @@
         }
 
         @media (max-width: 768px) {
-            .navbar { flex-direction: column; }
-            .nav-links { flex-wrap: wrap; justify-content: center; }
-            .contact-content { grid-template-columns: 1fr; }
+            .navbar {
+                flex-direction: column;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
         }
     </style>
 </head>
+
 <body>
     <header>
         <nav class="navbar">
@@ -222,8 +239,26 @@
 
     <main>
         <div class="container">
-            <h2>Entre em Contato</h2>
-            
+            <h2>Solicite seu orçamento em menos de 2 minutos</h2>
+            <p style="text-align:center;margin-bottom:30px;">
+                Escolha a data do seu evento e receba atendimento rápido pelo WhatsApp.
+            </p>
+            <div class="orcamento-box">
+
+                <h3>📲 Atendimento rápido</h3>
+
+                <p>
+                    Aniversários • Casamentos • Empresas • Confraternizações
+                </p>
+
+                <a href="https://wa.me/5511930700984" class="btn-orcamento">
+
+                    Solicitar no WhatsApp
+
+                </a>
+
+            </div>
+
             <div class="contact-content">
                 <div class="contact-info">
                     <h3><i class="fas fa-info-circle"></i> Informações</h3>
@@ -231,35 +266,37 @@
                     <p><i class="fas fa-envelope"></i> contato@samysbuffet.com.br</p>
                     <p><i class="fas fa-map-marker-alt"></i> São Paulo/SP</p>
                     <p><i class="fas fa-clock"></i> Segunda a Sábado, 9h às 18h</p>
-                    
+
                     <h3 style="margin-top: 2rem;">Redes Sociais</h3>
                     <div style="font-size: 2rem;">
-                        <a href="https://instagram.com/samysbuffet" style="color: #0f0f0f; margin-right: 1rem;"><i class="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/5511930700984" style="color: #1b1b1a;"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://instagram.com/samysbuffet" style="color: #0f0f0f; margin-right: 1rem;"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/5511930700984" style="color: #1b1b1a;"><i
+                                class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
-                
+
                 <form class="contact-form" onsubmit="event.preventDefault(); alert('Mensagem enviada!'); this.reset();">
                     <div class="form-group">
                         <label for="name">Nome:</label>
                         <input type="text" id="name" required>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="email">Email:</label>
                         <input type="email" id="email" required>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="phone">Telefone:</label>
                         <input type="tel" id="phone">
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="message">Mensagem:</label>
                         <textarea id="message" rows="5" required></textarea>
                     </div>
-                    
+
                     <button type="submit" class="btn-primary">Enviar Mensagem</button>
                 </form>
             </div>
@@ -301,4 +338,5 @@
         <p style="margin-top: 2rem;">&copy; 2024 Samys Buffet</p>
     </footer>
 </body>
+
 </html>
