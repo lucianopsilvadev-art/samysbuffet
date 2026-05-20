@@ -242,65 +242,58 @@ body {
     border-radius: 20px;
 
 }
+@media (max-width:768px){
 
-@media (max-width:768px) {
+.navbar{
+flex-direction:column;
+padding:15px;
+}
 
-    .navbar {
+.logo h1{
+font-size:22px;
+margin-bottom:10px;
+text-align:center;
+}
 
-        flex-direction: column;
+.nav-links{
+display:flex;
+flex-direction:row;
+gap:15px;
+justify-content:center;
+flex-wrap:wrap;
+}
 
-        padding: 20px;
+.nav-links a{
+font-size:14px;
+}
 
-    }
+.hero{
+padding:100px 20px 40px;
+height:auto;
+}
 
-    .nav-links {
+.hero h1{
+font-size:42px;
+line-height:1.2;
+}
 
-        flex-direction: column;
+.hero p{
+font-size:16px;
+padding:0 10px;
+}
 
-        align-items: center;
+.beneficios{
+grid-template-columns:1fr;
+}
 
-        margin-top: 15px;
+.item{
+font-size:14px;
+}
 
-        gap: 10px;
-
-    }
-
-    .contact-content {
-
-        grid-template-columns: 1fr;
-
-    }
-
-    .hero h1 {
-
-        font-size: 35px;
-
-    }
-
-    .hero p {
-
-        font-size: 18px;
-
-    }
-
-    .beneficios {
-
-        grid-template-columns: 1fr;
-
-    }
-
-    .container {
-
-        padding: 15px;
-
-    }
-
-    .orcamento-box {
-
-        margin: 20px;
-
-        padding: 20px;
-
-    }
+.btn{
+width:100%;
+max-width:300px;
+}
 
 }
+
