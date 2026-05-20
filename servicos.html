@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Samys Buffet - Serviços</title>
     <style>
         * {
@@ -12,37 +13,45 @@
 
         body {
             font-family: Arial;
-            background: rgba(150, 149, 149, 0.836);
+            background: #111;
             color: white;
         }
 
         .menu {
-            background: #161616;
+            background: #111;
             padding: 20px;
             text-align: center;
+            border-bottom: 1px solid #d4af37;
         }
 
         .menu a {
             color: white;
             margin: 15px;
             text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .menu a:hover {
+            color: #d4af37;
         }
 
         h1 {
             text-align: center;
             margin: 30px;
             color: white;
+            font-size: 32px;
         }
 
-        /* ===== CARROSSEL FÁCIL DE EDITAR ===== */
+        /* ===== CARROSSEL ===== */
         .carrossel {
             max-width: 900px;
             margin: 30px auto;
             position: relative;
+            padding: 0 20px;
         }
 
         .foto-container {
-            border: 2px solid white;
+            border: 2px solid #d4af37;
             border-radius: 10px;
             overflow: hidden;
         }
@@ -52,7 +61,6 @@
             height: 450px;
             display: block;
             object-fit: cover;
-            /* Faz a foto se ajustar sem deformar */
         }
 
         .legenda {
@@ -61,7 +69,7 @@
             padding: 15px;
             text-align: center;
             font-size: 18px;
-            border-top: 1px solid #333;
+            border-top: 1px solid #d4af37;
         }
 
         .botoes {
@@ -72,30 +80,27 @@
         }
 
         .botao {
-            background: white;
+            background: #d4af37;
             color: black;
             padding: 12px 30px;
             border: none;
-            border-radius: 5px;
+            border-radius: 50px;
             cursor: pointer;
             font-size: 16px;
             font-weight: bold;
+            transition: 0.3s;
         }
 
         .botao:hover {
-            background: #ccc;
+            background: #c4a02e;
+            transform: scale(1.02);
         }
 
         .indicador {
             text-align: center;
             margin: 15px;
             font-size: 18px;
-            color: #ccc;
-        }
-
-        .destaque {
-            color: white;
-            font-weight: bold;
+            color: #d4af37;
         }
 
         .rodape {
@@ -103,26 +108,106 @@
             padding: 40px;
             text-align: center;
             margin-top: 50px;
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        /* Cards de serviços */
+        .servicos-grid {
+            max-width: 900px;
+            margin: 50px auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .servicos-grid h2 {
+            margin-bottom: 30px;
+            color: #d4af37;
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .card-servico {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 15px;
+            transition: transform 0.3s;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .card-servico:hover {
+            transform: translateY(-5px);
+            border-color: #d4af37;
+        }
+
+        .card-servico h3 {
+            color: #d4af37;
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+
+        .card-servico p {
+            color: #ccc;
+            font-size: 14px;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 24px;
+                margin: 20px;
+            }
+            
+            .foto {
+                height: 250px;
+            }
+            
+            .legenda {
+                font-size: 14px;
+                padding: 10px;
+            }
+            
+            .botao {
+                padding: 8px 20px;
+                font-size: 14px;
+            }
+            
+            .cards-container {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .card-servico {
+                padding: 20px;
+            }
+            
+            .card-servico h3 {
+                font-size: 18px;
+            }
+            
+            .menu a {
+                margin: 10px;
+                font-size: 14px;
+            }
         }
     </style>
 </head>
 
 <body>
     <div class="menu">
-        <a href="index.html">Ínício</a>
-        <a href="servicos.html">Eventos </a>
+        <a href="index.html">Início</a>
+        <a href="servicos.html">Eventos</a>
         <a href="contato.html">Contato</a>
     </div>
 
-    <h1> Transformamos Seu Evento em Algo Especial </h1>
+    <h1>✨ Transformamos Seu Evento em Algo Especial ✨</h1>
 
-    <!-- ===== CARROSSEL - VOCÊ SÓ PRECISA TROCAR AS FOTOS AQUI ===== -->
     <div class="carrossel">
         <div class="foto-container">
-            <!-- FOTO 1 - SUBSTITUA O LINK PELA SUA PRIMEIRA FOTO -->
-            <img src="./img/foto11.jpg" alt="img,png" class="foto" id="foto-principal" alt="Buffet">
-
-            <!-- LEGENDA DA FOTO 1 -->
+            <img src="./img/foto11.jpg" class="foto" id="foto-principal" alt="Buffet">
             <div class="legenda" id="legenda">
                 <strong>Buffet Completo</strong> - Variedade de pratos quentes e frios
             </div>
@@ -134,62 +219,51 @@
         </div>
 
         <div class="indicador">
-            Foto <span id="foto-atual">1</span> de <span id="total-fotos">5</span>
+            📸 Foto <span id="foto-atual">1</span> de <span id="total-fotos">10</span>
         </div>
     </div>
 
-    <!-- ===== LISTA DAS FOTOS - É SÓ EDITAR AQUI ===== -->
-    <script>
-        // ===== COLOQUE SUAS FOTOS AQUI =====
-        // Só trocar os links dentro das aspas e as legendas
+    <div class="servicos-grid">
+        <h2>📋 Nossos Serviços</h2>
+        <div class="cards-container">
+            <div class="card-servico">
+                <h3>💍 Casamentos</h3>
+                <p>Buffet completo para seu casamento</p>
+            </div>
+            <div class="card-servico">
+                <h3>🎂 Aniversários</h3>
+                <p>Festas inesquecíveis</p>
+            </div>
+            <div class="card-servico">
+                <h3>🏢 Eventos Corporativos</h3>
+                <p>Profissionalismo para sua empresa</p>
+            </div>
+            <div class="card-servico">
+                <h3>🎊 Confraternizações</h3>
+                <p>Momentos especiais</p>
+            </div>
+        </div>
+    </div>
 
+    <div class="rodape">
+        <p>📞 Samys Buffet - (11) 93070-0984 - @samysbuffet</p>
+        <p>© 2026 Todos os direitos reservados</p>
+    </div>
+
+    <script>
         const fotos = [
-            {
-                link: "img/foto1.jpg",
-                legenda: "<strong>Massas Preparadas com Qualidade</strong> 🍝"
-            },
-            {
-                link: "img/foto2.jpg",
-                legenda: "<strong>Buffet Completo e Sofisticado</strong> 🥂"
-            },
-            {
-                link: "img/foto3.jpg",
-                legenda: "<strong>Pratos Especiais para seu Evento</strong> ✨"
-            },
-            {
-                link: "img/foto4.jpg",
-                legenda: "<strong>Gastronomia com Excelência</strong> ❤️"
-            },
-            {
-                link: "img/foto5.jpg",
-                legenda: "<strong>Estação de Sushi Premium</strong> 🍣"
-            },
-            {
-                link: "img/foto6.jpg",
-                legenda: "<strong>Crepes Doces e Salgados Feitos na Hora</strong> 🥞"
-            },
-            {
-                link: "img/foto7.jpg",
-                legenda: "<strong>Buffet Premium</strong>"
-            },
-            {
-                link: "img/foto8.jpg",
-                legenda: "<strong>Decoração Especial</strong>"
-            },
-            {
-                link: "img/foto9.jpg",
-                legenda: "<strong>Mesa Completa com Pratos Quentes e Frios</strong> 🍲"
-            },
-            {
-                link: "img/foto10.jpg",
-                legenda: "<strong>Qualidade e Sabor em Cada Detalhe</strong> ❤️"
-            }
+            { link: "img/foto1.jpg", legenda: "<strong>Massas Preparadas com Qualidade</strong> 🍝" },
+            { link: "img/foto2.jpg", legenda: "<strong>Buffet Completo e Sofisticado</strong> 🥂" },
+            { link: "img/foto3.jpg", legenda: "<strong>Pratos Especiais para seu Evento</strong> ✨" },
+            { link: "img/foto4.jpg", legenda: "<strong>Gastronomia com Excelência</strong> ❤️" },
+            { link: "img/foto5.jpg", legenda: "<strong>Estação de Sushi Premium</strong> 🍣" },
+            { link: "img/foto6.jpg", legenda: "<strong>Crepes Doces e Salgados Feitos na Hora</strong> 🥞" },
+            { link: "img/foto7.jpg", legenda: "<strong>Buffet Premium</strong> 🍽️" },
+            { link: "img/foto8.jpg", legenda: "<strong>Decoração Especial</strong> 🎨" },
+            { link: "img/foto9.jpg", legenda: "<strong>Mesa Completa com Pratos Quentes e Frios</strong> 🍲" },
+            { link: "img/foto10.jpg", legenda: "<strong>Qualidade e Sabor em Cada Detalhe</strong> ❤️" }
         ];
 
-
-
-
-        // ===== NÃO PRECISA MEXER DAQUI PRA BAIXO =====
         let fotoIndex = 0;
         const fotoElement = document.getElementById('foto-principal');
         const legendaElement = document.getElementById('legenda');
@@ -214,34 +288,5 @@
             atualizarFoto();
         }
     </script>
-
-    <!-- LISTA DE SERVIÇOS -->
-    <div style="max-width: 900px; margin: 50px auto; text-align: center;">
-        <h2 style="margin-bottom: 30px;">Nossos Serviços</h2>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-            <div style="background: #111; padding: 20px; border-radius: 10px;">
-                <h3>Casamentos</h3>
-                <p>Buffet completo para seu casamento</p>
-            </div>
-            <div style="background: #111; padding: 20px; border-radius: 10px;">
-                <h3>Aniversários</h3>
-                <p>Festas inesquecíveis</p>
-            </div>
-            <div style="background: #111; padding: 20px; border-radius: 10px;">
-                <h3>Eventos Corporativos</h3>
-                <p>Profissionalismo para sua empresa</p>
-            </div>
-            <div style="background: #111; padding: 20px; border-radius: 10px;">
-                <h3>Confraternizações</h3>
-                <p>Momentos especiais</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="rodape">
-        <p>Samys Buffet - (11) 93070-0984 - @samysbuffet</p>
-        <p>© 2026 Todos os direitos reservados</p>
-    </div>
 </body>
-
-</Págína Início Págína Eventos Págína Contatoml>
+</html>
