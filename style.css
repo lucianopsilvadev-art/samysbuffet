@@ -213,7 +213,7 @@ body {
 
 .secao-depoimentos {
 
-    padding: 80px 40px;
+    padding: 20px 0px;
 
     text-align: center;
 
@@ -230,70 +230,136 @@ body {
     flex-wrap: wrap;
 
 }
+.titulo-depoimentos{
 
-.cartao-depoimento {
+font-size:40px;
 
-    width: 300px;
-
-    padding: 20px;
-
-    background: #1d1d1d;
-
-    border-radius: 20px;
+margin-bottom:40px;
 
 }
-@media (max-width:768px){
 
-.navbar{
-flex-direction:column;
+.cartao-depoimento{
+
+width:220px;
+
 padding:15px;
-}
 
-.logo h1{
-font-size:22px;
-margin-bottom:10px;
+background:#797876;
+
+border-radius:20px;
+
 text-align:center;
-}
 
-.nav-links{
-display:flex;
-flex-direction:row;
-gap:15px;
-justify-content:center;
-flex-wrap:wrap;
 }
+/* celular - depoimentos */
+/* FOTO CLIENTE */
 
-.nav-links a{
-font-size:14px;
-}
+.foto-cliente{
 
-.hero{
-padding:100px 20px 40px;
-height:auto;
-}
+width:100px;
 
-.hero h1{
-font-size:42px;
-line-height:1.2;
-}
+height:100px;
 
-.hero p{
-font-size:16px;
-padding:0 10px;
-}
+border-radius:50%;
 
-.beneficios{
-grid-template-columns:1fr;
-}
+object-fit:cover;
 
-.item{
-font-size:14px;
-}
+display:block;
 
-.btn{
-width:100%;
-max-width:300px;
-}
+margin:0 auto 10px;
 
 }
 
+/* CELULAR */
+
+/* ========== CORREÇÕES PARA CELULAR ========== */
+@media (max-width: 768px) {
+    /* MENU RESPONSIVO */
+    .navbar {
+        flex-direction: column;
+        padding: 20px 20px;
+        background: rgba(0, 0, 0, 0.8);
+        position: fixed;
+        top: 0;
+    }
+
+    .logo h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .nav-links li {
+        margin-left: 0;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    /* HERO - AJUSTE PARA TELA PEQUENA */
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        padding-top: 140px;
+        padding-bottom: 60px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .topo {
+        font-size: 12px;
+        padding: 6px 15px;
+    }
+
+    /* BENEFÍCIOS - UMA COLUNA NO CELULAR */
+    .beneficios {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .item {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .btn {
+        padding: 14px 25px;
+        font-size: 18px;
+    }
+
+    /* AJUSTE GERAL DO CONTEÚDO HERO */
+    .hero-conteudo {
+        padding: 0 15px;
+    }
+}
+
+/* Para telas MUITO pequenas (celulares antigos) */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 26px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .navbar {
+        padding: 15px;
+    }
+
+    .logo h1 {
+        font-size: 20px;
+    }
+}
